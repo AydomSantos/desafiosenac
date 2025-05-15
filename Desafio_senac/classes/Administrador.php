@@ -22,7 +22,7 @@ class Administrador extends Usuario {
             'id' => $this->id,
             'nome' => $this->nome,
             'email' => $this->email,
-            'senha' => $this->senha,
+            'senha' => $this->senhaHash,
             'idioma' => $this->idioma,
             'tema' => $this->tema,
             'tipo' => 'admin'
