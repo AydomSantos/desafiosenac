@@ -49,8 +49,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
         }
 
-        // Cria e salva o novo usuário
-        $novoUsuario = new Usuario($nome, $email, $senha, $idioma, $tema);
+        // Cria e salva o novo usuário CORRIGIDO
+        // Use o método estático para garantir que a senha seja hasheada
+        $novoUsuario = Usuario::criarNovoUsuario($nome, $email, $senha, $idioma, $tema);
         $novoUsuario->salvar();
 
         $_SESSION['registro_sucesso'] = true;

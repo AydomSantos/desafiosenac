@@ -32,5 +32,32 @@
         "idioma": "pt",
         "tema": "claro",
         "tipo": "usuario"
+    },
+    "usr_6826419d6f038": {
+        "id": "usr_6826419d6f038",
+        "nome": "Aydom Aparecido",
+        "email": "aydomroot@gmail.com",
+        "senha": "admin12345",
+        "idioma": "pt",
+        "tema": "claro",
+        "tipo": "usuario"
+    },
+    "usr_682641ecebc9d": {
+        "id": "usr_682641ecebc9d",
+        "nome": "teste",
+        "email": "aydomaparecido@gmail.com",
+        "senha": "1234512345",
+        "idioma": "pt",
+        "tema": "claro",
+        "tipo": "usuario"
+    },
+    "usr_6826444adb599": {
+        "id": "usr_6826444adb599",
+        "nome": "Aydom Aparecido update",
+        "email": "aydonteste@gmail.com",
+        "senha": "$2y$10$pQ5u5lDHdMMZMi26mCCeju\/2MFTzvrCQK0JkeXnpQoOf8Ltg3xBMi",
+        "idioma": "pt",
+        "tema": "claro",
+        "tipo": "usuario"
     }
 }

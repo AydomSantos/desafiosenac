@@ -4,11 +4,6 @@ require_once 'classes/Usuario.php';
 require_once 'classes/Administrador.php';
 require_once 'classes/Sessao.php';
 
-// Inicia a sessão se não estiver iniciada
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     try {
         // Sanitiza os inputs
@@ -70,10 +65,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
         if (!$usuarioEncontrado) {
+            // Removido: error_log("Login attempt: User not found for email - " . $email);
             throw new Exception('Usuário não encontrado!');
         }
-
+        
         if (!$usuarioEncontrado->verificarSenha($senha)) {
+            // Removido: error_log("Password verification failed for user: " . $usuarioEncontrado->getEmail());
             throw new Exception('Senha incorreta!');
         }
 

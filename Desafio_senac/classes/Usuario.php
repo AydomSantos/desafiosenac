@@ -47,6 +47,24 @@ class Usuario {
         $this->senhaHash = password_hash($senhaPlana, PASSWORD_DEFAULT);
     }
 
+    // Add these new setter methods:
+    public function setNome(string $nome) {
+        $this->nome = $nome;
+    }
+
+    public function setEmail(string $email) {
+        // You might want to add email validation here if not done elsewhere
+        $this->email = $email;
+    }
+
+    public function setIdioma(string $idioma) {
+        $this->idioma = $idioma;
+    }
+
+    public function setTema(string $tema) {
+        $this->tema = $tema;
+    }
+
     public function salvar() {
         if (empty($this->id)) { 
             $this->id = uniqid('usr_');
@@ -56,7 +74,7 @@ class Usuario {
             'id' => $this->id,
             'nome' => $this->nome,
             'email' => $this->email,
-            'senha' => $this->senhaHash, // Salva o hash
+            'senha' => $this->senhaHash, 
             'idioma' => $this->idioma,
             'tema' => $this->tema,
             'tipo' => ($this instanceof Administrador) ? 'admin' : 'usuario' 
