@@ -1,0 +1,9 @@
+{
+    "id": "admin123",
+    "nome": "Admin",
+    "email": "admin@example.com",
+    "senha": "$2y$10$...", 
+    "idioma": "pt",
+    "tema": "claro",
+    "tipo": "admin"
+}
