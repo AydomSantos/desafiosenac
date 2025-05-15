@@ -29,6 +29,10 @@ class Usuario {
         return password_verify($senha, $this->senha);
     }
 
+    public function setId($id) {
+        $this->id = $id;
+    }
+
     public function salvar() {
         $usuarios = carregarUsuarios();
         $usuarios[$this->id] = [

@@ -40,7 +40,7 @@ $tema = $_COOKIE['tema'] ?? 'claro';
                             <strong>Email:</strong> <?= htmlspecialchars($usuario['email']) ?><br>
                             <strong>Idioma:</strong> <?= htmlspecialchars($usuario['idioma']) ?><br>
                             <strong>Tema:</strong> <?= htmlspecialchars($usuario['tema']) ?><br>
-                            <?php if ($isAdmin)): ?>
+                            <?php if ($isAdmin): ?>
                                 <strong>Tipo:</strong> Administrador<br>
                             <?php endif; ?>
                         </p>

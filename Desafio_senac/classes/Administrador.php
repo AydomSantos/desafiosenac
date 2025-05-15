@@ -12,6 +12,9 @@ class Administrador extends Usuario {
             return $usuario['tipo'] === 'usuario';
         });
     }
+    public function setId($id) {
+        $this->id = $id;
+    }
 
     public function salvar() {
         $usuarios = carregarUsuarios();
