@@ -1,0 +1,72 @@
+{
+    "id": "1",
+    "nome": "Admin",
+    "email": "admin@example.com",
+    "senha": "$2y$10$...",
+    "idioma": "pt",
+    "tema": "claro",
+    "tipo": "admin",
+    "6825357c5ee9b": {
+        "id": "6825357c5ee9b",
+        "nome": "Aydom",
+        "email": "teste@gmail.com",
+        "senha": "$2y$10$bPjksn6iGcqYFgB4VD4ETeoeqgRjt1fA07dO9kYEjA3PHSMIIO35q",
+        "idioma": "pt",
+        "tema": "claro",
+        "tipo": "usuario"
+    },
+    "682536032728a": {
+        "id": "682536032728a",
+        "nome": "Aydom aratec Aparecido",
+        "email": "aydonaparecido32@gmail.com",
+        "senha": "$2y$10$\/11bkN27R7YHXzuVdKxOnuUb9YVeVk9aT6VeTOSnO6xakJBIq4UAm",
+        "idioma": "pt",
+        "tema": "claro",
+        "tipo": "usuario"
+    },
+    "6825369ecd67d": {
+        "id": "6825369ecd67d",
+        "nome": "admin",
+        "email": "admin@gmail.com",
+        "senha": "$2y$10$ZHENqMspWX6N6v.fjpCokuU\/AT.rK\/aTVN9adtAyjYUuNOCumK1Nu",
+        "idioma": "pt",
+        "tema": "claro",
+        "tipo": "usuario"
+    },
+    "usr_6826419d6f038": {
+        "id": "usr_6826419d6f038",
+        "nome": "Aydom Aparecido",
+        "email": "aydomroot@gmail.com",
+        "senha": "admin12345",
+        "idioma": "pt",
+        "tema": "claro",
+        "tipo": "usuario"
+    },
+    "usr_682641ecebc9d": {
+        "id": "usr_682641ecebc9d",
+        "nome": "teste",
+        "email": "aydomaparecido@gmail.com",
+        "senha": "1234512345",
+        "idioma": "pt",
+        "tema": "claro",
+        "tipo": "usuario"
+    },
+    "usr_6826444adb599": {
+        "id": "usr_6826444adb599",
+        "nome": "Aydom Aparecido update",
+        "email": "aydonteste@gmail.com",
+        "senha": "$2y$10$pQ5u5lDHdMMZMi26mCCeju\/2MFTzvrCQK0JkeXnpQoOf8Ltg3xBMi",
+        "idioma": "pt",
+        "tema": "claro",
+        "tipo": "usuario"
+    },
+    "usr_682bb49680485": {
+        "id": "usr_682bb49680485",
+        "nome": "carlos",
+        "email": "carlosvictossantos2@gmail.com",
+        "senha": "$2y$10$rHO4I9GIB\/dslwvJunHO4.BfAQIh1V3AbXW0.RG18De5kut29htCK",
+        "idioma": "en",
+        "tema": "escuro",
+        "tipo": "usuario"
+    }
+}
