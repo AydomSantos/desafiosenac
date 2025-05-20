@@ -28,9 +28,9 @@
         "id": "6825369ecd67d",
         "nome": "admin",
         "email": "admin@gmail.com",
-        "senha": "$2y$10$9zJoC6gdRpgtTuSHGrLuNeP\/.m3s6MEh6UVnkt5Wf.KDSDpasoq.W",
-        "idioma": "en",
-        "tema": "escuro",
+        "senha": "$2y$10$ZHENqMspWX6N6v.fjpCokuU\/AT.rK\/aTVN9adtAyjYUuNOCumK1Nu",
+        "idioma": "pt",
+        "tema": "claro",
         "tipo": "usuario"
     },
     "usr_6826419d6f038": {
@@ -65,8 +65,8 @@
         "nome": "carlos",
         "email": "carlosvictossantos2@gmail.com",
         "senha": "$2y$10$rHO4I9GIB\/dslwvJunHO4.BfAQIh1V3AbXW0.RG18De5kut29htCK",
-        "idioma": "en",
-        "tema": "escuro",
+        "idioma": "es",
+        "tema": "claro",
         "tipo": "usuario"
     }
 }

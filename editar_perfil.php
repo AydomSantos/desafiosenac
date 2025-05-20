@@ -1,4 +1,5 @@
 <?php
+
 require_once 'config.php';
 require_once 'classes/Usuario.php';
 require_once 'classes/Administrador.php';
@@ -108,129 +109,101 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 $idiomaPagina = $_COOKIE['idioma'] ?? $usuarioLogado['idioma'] ?? 'pt';
 $temaPagina = $_COOKIE['tema'] ?? $usuarioLogado['tema'] ?? 'claro';
 ?>
-
 <!DOCTYPE html>
-<html lang="<?= htmlspecialchars($idiomaPagina) ?>">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Perfil</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        .dark-mode .btn-outline-primary {
-            color: #0d6efd;
-            border-color: #0d6efd;
+        body {
+            font-family: Arial, sans-serif;
+            background-color: <?= $temaPagina === 'escuro' ? '#121212' : '#f4f4f4' ?>;
+            color: <?= $temaPagina === 'escuro' ? '#ffffff' : '#000000' ?>;
+            padding: 20px;
         }
-        .dark-mode .btn-outline-primary:hover {
-            background-color: #0d6efd;
-            color: #fff;
+        form {
+            background: <?= $temaPagina === 'escuro' ? '#1e1e1e' : '#ffffff' ?>;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 500px;
+            margin: auto;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        label {
+            display: block;
+            margin-top: 15px;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            margin-top: 20px;
+            background-color: #007BFF;
+            border: none;
+            padding: 10px 20px;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .mensagem {
+            margin-bottom: 15px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .erro {
+            background-color: #ffcccc;
+            color: #a00;
+        }
+        .sucesso {
+            background-color: #ccffcc;
+            color: #080;
         }
     </style>
 </head>
-<body class="<?= $temaPagina === 'escuro' ? 'dark-mode' : ''
-?>">
-    <div class="container py-5">
-        <div class="row justify-content-center">
-            <div class="col-md-8 col-lg-6">
-                <div class="card shadow">
-                    <div class="card-body p-4">
-                        <h2 class="text-center mb-4">Editar Perfil</h2>
-                        
-                        <?php if (isset($erro)): ?>
-                            <div class="alert alert-danger"><?= htmlspecialchars($erro) ?></div>
-                        <?php endif;
-                        if (isset($mensagemSucesso)): ?>
-                            <div class="alert alert-success"><?= htmlspecialchars($mensagemSucesso) ?></div>
-                        <?php endif;
-                        ?>
-                        
-                        <form method="POST" class="needs-validation" novalidate>
-                            <!-- Nome -->
-                            <div class="mb-3">
-                                <label for="nome" class="form-label">Nome</label>
-                                <input type="text" class="form-control" id="nome" name="nome" 
-                                       value="<?= htmlspecialchars($objetoUsuario->getNome()) ?>" required>
-                                <div class="invalid-feedback">
-                                    Por favor, insira seu nome.
-                                </div>
-                            </div>
-                            
-                            <!-- Email -->
-                            <div class="mb-3">
-                                <label for="email" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="email" name="email" 
-                                       value="<?= htmlspecialchars($objetoUsuario->getEmail()) ?>" required>
-                                <div class="invalid-feedback">
-                                    Por favor, insira um email válido.
-                                </div>
-                            </div>
-                            
-                            <!-- Senha -->
-                            <div class="mb-3 password-container">
-                                <label for="nova_senha" class="form-label">Nova Senha</label>
-                                <input type="password" class="form-control" id="nova_senha" name="nova_senha">
-                                <span class="password-toggle" onclick="togglePassword('nova_senha', this)">
-                                    <i class="bi bi-eye-slash"></i>
-                                </span>
-                                <div class="invalid-feedback">
-                                    A senha deve ter no mínimo 8 caracteres.
-                                </div>
-                            </div>
-                            
-                            <!-- Confirmar Nova Senha -->
-                            <div class="mb-3 password-container">
-                                <label for="confirmar_nova_senha" class="form-label">Confirmar Nova Senha</label>
-                                <input type="password" class="form-control" id="confirmar_nova_senha" name="confirmar_nova_senha">
-                                <span class="password-toggle" onclick="togglePassword('confirmar_nova_senha', this)">
-                                    <i class="bi bi-eye-slash"></i>
-                                </span>
-                                <div class="invalid-feedback">
-                                    As senhas devem coincidir.
-                                </div>
-                            </div>
-                            
-                            <!-- Idioma -->
-                            <div class="mb-3">
-                                <label for="idioma" class="form-label">Idioma</label>
-                                <select class="form-select" id="idioma" name="idioma" required>
-                                    <option value="pt" <?= $objetoUsuario->getIdioma() === 'pt' ? 'selected' : '' ?>>Português</option>
-                                    <option value="en" <?= $objetoUsuario->getIdioma() === 'en' ? 'selected' : '' ?>>English</option>
-                                </select>
-                            </div>
-                            
-                            <!-- Tema -->
-                            <div class="mb-3">
-                                <label for="tema" class="form-label">Tema</label>
-                                <select class="form-select" id="tema" name="tema" required>
-                                    <option value="claro" <?= $objetoUsuario->getTema() === 'claro' ? 'selected' : '' ?>>Claro</option>
-                                    <option value="escuro" <?= $objetoUsuario->getTema() === 'escuro' ? 'selected' : '' ?>>Escuro</option>
-                                </select>
-                            </div>
-                            
-                            <button type="submit" class="btn btn-primary w-100 py-2">Salvar</button>
-                            
-                            <div class="mt-3 text-center">
-                                <a href="dashboard.php">Cancelar</a>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+<body>
 
-    <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<h2>Editar Perfil</h2>
 
+<?php if (!empty($erro)): ?>
+    <div class="mensagem erro"><?= htmlspecialchars($erro) ?></div>
+<?php endif; ?>
 
+<?php if (!empty($mensagemSucesso)): ?>
+    <div class="mensagem sucesso"><?= htmlspecialchars($mensagemSucesso) ?></div>
+<?php endif; ?>
 
+<form method="POST" action="">
+    <label for="nome">Nome:</label>
+    <input type="text" name="nome" id="nome" value="<?= htmlspecialchars($usuarioLogado['nome']) ?>" required>
 
+    <label for="email">E-mail:</label>
+    <input type="email" name="email" id="email" value="<?= htmlspecialchars($usuarioLogado['email']) ?>" required>
 
+    <label for="nova_senha">Nova Senha:</label>
+    <input type="password" name="nova_senha" id="nova_senha" placeholder="Deixe em branco para não alterar">
 
+    <label for="confirmar_nova_senha">Confirmar Nova Senha:</label>
+    <input type="password" name="confirmar_nova_senha" id="confirmar_nova_senha" placeholder="Confirme a nova senha">
 
+    <label for="idioma">Idioma:</label>
+    <select name="idioma" id="idioma" required>
+        <option value="pt" <?= $usuarioLogado['idioma'] === 'pt' ? 'selected' : '' ?>>Português</option>
+        <option value="en" <?= $usuarioLogado['idioma'] === 'en' ? 'selected' : '' ?>>Inglês</option>
+        <option value="es" <?= $usuarioLogado['idioma'] === 'es' ? 'selected' : '' ?>>Espanhol</option>
+    </select>
 
+    <label for="tema">Tema:</label>
+    <select name="tema" id="tema" required>
+        <option value="claro" <?= $usuarioLogado['tema'] === 'claro' ? 'selected' : '' ?>>Claro</option>
+        <option value="escuro" <?= $usuarioLogado['tema'] === 'escuro' ? 'selected' : '' ?>>Escuro</option>
+    </select>
 
+    <button type="submit">Salvar Alterações</button>
+</form>
 
-
+</body>
+</html>
