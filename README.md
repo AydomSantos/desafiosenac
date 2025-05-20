@@ -62,14 +62,5 @@ O arquivo `config.php` é vital para o projeto e desempenha as seguintes funçõ
 4.  **Configurar `BASE_URL`:** Edite o arquivo `Desafio_senac/config.php` e ajuste a constante `BASE_URL` para refletir o endereço correto do projeto no seu servidor (ex: `http://localhost/nome_da_pasta_do_projeto/Desafio_senac/`).
 5.  **Acesso:** Abra seu navegador e acesse a `BASE_URL` que você configurou.
 
-## Próximos Passos e Melhorias Sugeridas
-
-*   Implementar validação robusta dos dados de entrada nos formulários.
-*   Adicionar hashing de senhas para maior segurança no armazenamento.
-*   Refatorar o código para utilizar Programação Orientada a Objetos (OOP) de forma mais extensiva (ex: classes para `Usuario`, `Autenticacao`).
-*   Melhorar a interface do usuário (UI) e a experiência do usuário (UX).
-*   Adicionar tratamento de erros mais detalhado.
-*   Considerar o uso de um sistema de templates para separar a lógica da apresentação.
-
 ---
 Este README visa fornecer uma compreensão clara do projeto. Sinta-se à vontade para expandi-lo com mais detalhes conforme o projeto evolui!
